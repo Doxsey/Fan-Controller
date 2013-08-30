@@ -14,7 +14,7 @@ void setup() {
   }
 
 void loop() {
-	analogWrite(led, 40);						// Turns on the power LED
+	analogWrite(led, 5);						// Turns on the power LED
 		
 	// Acquire Reading from the temp sensor
 	digitalWrite(tempPower, HIGH);  
@@ -24,10 +24,8 @@ void loop() {
 	if (tempValue < 460) {
 		caseVal = 0; }
 		else if (tempValue > 480) {
-			caseVal = 3; }
-		else if (tempValue > 470) {
 			caseVal = 2; }
-		else if (tempValue > 460) {
+		else if (tempValue > 470) {
 			caseVal = 1; }
 		else {
 			caseVal = 0; }
@@ -37,62 +35,60 @@ void loop() {
 			analogWrite(fanPin, 0);
 				analogWrite(led, 0);
 				delay(2000);
-				analogWrite(led, 40);
+				analogWrite(led, 5);
 			break;
 		case 1:
-			//analogWrite(fanPin, 255);
-			//delay(2000);
-			analogWrite(fanPin, 200);
-			
-				analogWrite(led, 0);
-				delay(2000);
-				analogWrite(led, 40);
-				delay(200);
-				analogWrite(led, 0);
-				delay(2000);
-				analogWrite(led, 40);
-			break;
-		case 2:
-			//analogWrite(fanPin, 255);
-			//delay(1000);
 			analogWrite(fanPin, 225);
 			
 				analogWrite(led, 0);
 				delay(2000);
-				analogWrite(led, 40);
-				delay(200);
-				analogWrite(led, 0);
-				delay(200);
-				analogWrite(led, 40);
+				analogWrite(led, 5);
 				delay(200);
 				analogWrite(led, 0);
 				delay(2000);
-				analogWrite(led, 40);
+				analogWrite(led, 5);
 			break;
-		case 3:
+		case 2:
 			//analogWrite(fanPin, 255);
 			//delay(1000);
 			analogWrite(fanPin, 250);
 			
 				analogWrite(led, 0);
 				delay(2000);
-				analogWrite(led, 40);
+				analogWrite(led, 5);
 				delay(200);
 				analogWrite(led, 0);
 				delay(200);
-				analogWrite(led, 40);
-				delay(200);
-				analogWrite(led, 0);
-				delay(200);
-				analogWrite(led, 40);
+				analogWrite(led, 5);
 				delay(200);
 				analogWrite(led, 0);
 				delay(2000);
-				analogWrite(led, 40);
+				analogWrite(led, 5);
 			break;
+		/* case 3:
+			//analogWrite(fanPin, 255);
+			//delay(1000);
+			analogWrite(fanPin, 250);
+			
+				analogWrite(led, 0);
+				delay(2000);
+				analogWrite(led, 5);
+				delay(200);
+				analogWrite(led, 0);
+				delay(200);
+				analogWrite(led, 5);
+				delay(200);
+				analogWrite(led, 0);
+				delay(200);
+				analogWrite(led, 5);
+				delay(200);
+				analogWrite(led, 0);
+				delay(2000);
+				analogWrite(led, 5);
+			break; */
 	
 	}
-	delay(10000);
+	delay(300000);
 	
 }
 
